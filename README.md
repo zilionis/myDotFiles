@@ -1,0 +1,4 @@
+myDotFiles
+==========
+
+my bash dotFiles
