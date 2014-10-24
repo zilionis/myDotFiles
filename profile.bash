@@ -92,14 +92,6 @@ git_prompt() {
   echo -n " ❯"
 }
 
-
-
-#
-# brew install coreutils spark tree mc wget
-#
-#
-#
-
 ## Customize the terminal input line
 prompt() {
   #PS1="  ☁  $color_blue\W$color_reset $(git_prompt): "
@@ -119,10 +111,8 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 
 alias home="cd ~ && clear"
+alias diff="colordiff"
 
-#alias ls="gls --color=auto -hF"
-
-# Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
 else # OS X `ls`
