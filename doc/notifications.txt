@@ -1,0 +1,1 @@
+terminal-notifier -message "vaidas" -title "test" -subtitle "nera" -sender com.apple.Safari
