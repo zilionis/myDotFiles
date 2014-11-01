@@ -95,7 +95,7 @@ git_prompt() {
 ## Customize the terminal input line
 prompt() {
   #PS1="  ☁  $color_blue\W$color_reset $(git_prompt): "
-  PS1="$color_white[ $color_yellow\u@\H ${color_red}\t$color_white ] $color_green\w$color_white $(git_prompt)$color_reset\n→ "
+  PS1="\n\n$color_white[ $color_yellow\u@\H ${color_red}\t$color_white ] $color_green\w$color_white $(git_prompt)$color_reset\n→ "
 }
 
 PROMPT_COMMAND=prompt
