@@ -1,11 +1,13 @@
-export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+   export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH
+   export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+   if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
+   fi
+   [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 fi
-
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 git_branch() {
   # On branches, this will return the branch name
@@ -119,7 +121,7 @@ else # OS X `ls`
 	colorflag="-G"
 fi
 
-alias ls="gls ${colorflag} -hF"
+#alias ls="gls ${colorflag} -hF"
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 function mkd() {
